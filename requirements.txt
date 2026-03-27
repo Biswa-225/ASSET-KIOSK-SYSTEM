@@ -1,0 +1,63 @@
+opencv-contrib-python
+numpy
+Pillow
+pyzbar
+
+
+sudo apt update
+sudo apt install -y python3-pip libzbar0
+
+pip3 install numpy==1.26.4 --break-system-packages
+pip3 install opencv-contrib-python==4.8.1.78 --break-system-packages
+or 
+pip3 install opencv-contrib-python==4.9.0.80 --break-system-packages
+pip3 install Pillow==9.5.0 pyzbar==0.1.9 --break-system-packages
+
+
+
+
+
+
+verify this:
+
+python3 - <<EOF
+import cv2, numpy, PIL, pyzbar
+print("OpenCV:", cv2.__version__)
+print("NumPy:", numpy.__version__)
+print("Pillow:", PIL.__version__)
+print("pyzbar OK")
+EOF
+
+
+
+A) Hardware / OS prerequisites (Pi 5 + RC522)
+Wiring (SPI0)
+
+RC522 → Raspberry Pi 5
+
+VCC → 3.3V (NOT 5V)
+
+GND → GND
+
+SDA/SS → GPIO8 (CE0)
+
+SCK → GPIO11 (SCLK)
+
+MOSI → GPIO10
+
+MISO → GPIO9
+
+RST → GPIO25 (you can change)
+
+Enable SPI
+sudo raspi-config
+# Interface Options -> SPI -> Enable
+sudo reboot
+
+Install deps
+sudo apt-get update
+sudo apt-get install -y python3-spidev python3-rpi.gpio
+pip3 install mfrc522
+
+
+
