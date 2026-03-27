@@ -162,3 +162,11 @@ It is suitable for:
 ```bash
 git clone https://github.com/YOUR-USERNAME/asset-kiosk-system.git
 cd asset-kiosk-system
+
+#Install system dependencies
+sudo apt update
+sudo apt install -y python3-pip libzbar0 python3-spidev python3-rpi.gpio
+
+#Install python dependencies
+pip3 install -r requirements.txt --break-system-packages
+
