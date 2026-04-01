@@ -170,3 +170,5 @@ sudo apt install -y python3-pip libzbar0 python3-spidev python3-rpi.gpio
 #Install python dependencies
 pip3 install -r requirements.txt --break-system-packages
 
+#Run
+python3 app.py
